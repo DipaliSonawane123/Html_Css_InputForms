@@ -27,9 +27,9 @@ email.addEventListener('input',function(){
     }
 });
 
-const phone = document.querySelector('#tel');
+const phone = document.querySelector('#tel'); 
 const phoneError = document.querySelector('.tel-error');
-phone.addEventListener('input',function(){ 
+phone.addEventListener('input',function(){
     let phoneRegex = RegExp('^([0-9]{2}[ ][0-9]{10})$');
     if(phoneRegex.test(phone.value)){
         phoneError.textContent = "";
@@ -41,7 +41,7 @@ phone.addEventListener('input',function(){
 const pass = document.querySelector('#pwd');
 const passError = document.querySelector('.pass-error');
 pass.addEventListener('input',function(){
-    let passRegex = RegExp('[A-z0-9@#$%*]{8,}$');
+    let passRegex = RegExp('(?=.*[A-Z])(?=.*\\d)((?=.*[@$!%*?&]){1})[A-Za-z0-9@$!%*?&]{8,}'); 
     if(passRegex.test(pass.value)){
         passError.textContent = "";
     }else{
