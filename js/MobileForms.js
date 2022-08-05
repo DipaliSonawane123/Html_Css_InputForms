@@ -4,12 +4,12 @@ output.textContent = salary.value;
 salary.addEventListener('input', function(){
     output.textContent = salary.value;
 });
- 
+
 const text = document.querySelector('#text');
 const textError = document.querySelector('.text-error');
 text.addEventListener('input',function(){
     let nameRegex = RegExp('^[A-Z]{1}[a-z]{2,}$');
-    if(nameRegex.test(text.value)){
+    if(nameRegex.test(text.value)){ 
         textError.textContent = "";
     }else{
         textError.textContent = "Name is incorrect";
@@ -24,5 +24,16 @@ email.addEventListener('input',function(){
         emailError.textContent = "";
     }else{
         emailError.textContent = "Email is incorrect";
+    }
+});
+
+const phone = document.querySelector('#tel');
+const phoneError = document.querySelector('.tel-error');
+phone.addEventListener('input',function(){
+    let phoneRegex = RegExp('^([0-9]{2}[ ][0-9]{10})$');
+    if(phoneRegex.test(phone.value)){
+        phoneError.textContent = "";
+    }else{
+        phoneError.textContent = "Phone number is incorrect";
     }
 })
